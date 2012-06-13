@@ -1,0 +1,23 @@
+﻿@using System.Web.Mvc.Html
+@model dynamic
+
+@{
+    ViewBag.Title = "title";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>title</h2>
+
+<div>
+    <p>Hello, @(Model.Text)!</p>
+</div>
+<hr/>
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.Label("Text")
+        @Html.TextBox("Text", (object)Model.Text)
+        
+        <input type="submit" value="Send"/>
+    }
+</div>
